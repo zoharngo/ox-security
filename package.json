@@ -13,9 +13,10 @@
     "@testing-library/user-event": "^12.1.10",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
+    "react-scripts": "5.0.0",
     "styled-components": "^5.3.1",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "@snyk/protect": "latest"
   },
   "scripts": {
     "jsonserver": "json-server --watch src/users.json --port 3001",
@@ -23,7 +24,9 @@
     "dev": "concurrently --kill-others \"npm run start\" \"npm run jsonserver\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "eslintConfig": {
     "extends": [
@@ -46,5 +49,6 @@
   "devDependencies": {
     "concurrently": "^6.3.0",
     "json-server": "^0.17.0"
-  }
+  },
+  "snyk": true
 }
